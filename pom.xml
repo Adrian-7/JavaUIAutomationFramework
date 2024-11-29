@@ -13,6 +13,7 @@
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium-driver.version>4.26.0</selenium-driver.version>
+        <java-faker.version>1.0.2</java-faker.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,13 @@
             <artifactId>selenium-edge-driver</artifactId>
             <version>${selenium-driver.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${java-faker.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

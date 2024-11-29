@@ -12,6 +12,7 @@ public class DriverManager {
         switch (Web_Driver_Type.toUpperCase()) {
             case "CHROME":
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
                 System.out.println("The Chrome Driver is opened");
                 break;
             case "EDGE":
