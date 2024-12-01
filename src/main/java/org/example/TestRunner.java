@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.managers.DriverManager;
 import org.example.managers.RandomDataManager;
+import org.example.managers.ScrollManager;
 import org.openqa.selenium.*;
 
 public class TestRunner {
@@ -45,12 +46,9 @@ public class TestRunner {
         System.out.println("Password: " + passwordData);
         passwordInput.sendKeys(RandomDataManager.getRandomPassword());
 
-        WebElement element = driver.findElement(By.id("id_of_element"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(500);
-
-
         WebElement privacyToggleBar = driver.findElement(By.cssSelector("input[value='1'][name='agree']"));
+        ScrollManager.scrollToElement(privacyToggleBar);
+        Thread.sleep(500);
         privacyToggleBar.click();
 
         WebElement continueButton = driver.findElement(By.cssSelector("button[type='submit']"));
